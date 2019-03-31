@@ -10,7 +10,12 @@
         <h5 class="card-title">{{ $trainer->name }}</h5>
         <p>Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
         <a href="/trainers/{{ $trainer->slug }}/edit" class="btn btn-primary">Editar</a>
+        <form class="form-group" method="POST" action="/trainers/{{ $trainer->slug}}">
+             @csrf
+             @method('DELETE')
+             <button type="submit" class="btn btn-danger">Excluir</button>
 
+        </form>
     </div>
 
 

@@ -12,3 +12,4 @@
     <label for="">Imagem</label>
     <input type="file" value="" name="avatar" class="">
 </div>
+

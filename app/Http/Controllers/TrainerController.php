@@ -118,8 +118,13 @@ class TrainerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Trainer $trainer)
     {
-        //
+        //eliminar a imagem
+        $file_path = public_path().'/images/'.$trainer->avatar;
+        \File::delete($file_path);
+        //eliminando o treinador
+        $trainer->delete();
+        return 'Usuário excluido com sucesso !';
     }
 }

@@ -12,8 +12,9 @@
                 @include('trainers.form')
 
 
-            <button type="submit" class="btn btn-primary">Atualizar</button>
-           </form>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+
+            </form>
 
 @endsection
 
