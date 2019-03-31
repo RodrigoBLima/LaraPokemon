@@ -25,3 +25,7 @@ Route::get('pruba/{name}', 'PruebaController@pruba');
 //
 Route::resource('trainers', 'TrainerController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
