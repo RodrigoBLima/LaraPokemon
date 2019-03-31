@@ -4,6 +4,8 @@ namespace LaraDex\Http\Controllers;
 
 use Illuminate\Http\Request;
 use LaraDex\Trainer;
+use Iluminate\Support\Facades\Storage;
+use LaraDex\Http\Requests\StoreTrainerRequest;
 
 class TrainerController extends Controller
 {
@@ -35,16 +37,8 @@ class TrainerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreTrainerRequest $request)
     {
-        //validando os campos antes de salvar no bd
-        $validatedData = $request->validate([
-
-            'name' => 'required|max: 10',
-            'avatar' => 'required|image',
-            'slug' => 'required'
-
-        ]);
 
         $trainer = new Trainer();
 
