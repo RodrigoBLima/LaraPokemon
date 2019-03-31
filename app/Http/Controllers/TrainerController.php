@@ -37,6 +37,17 @@ class TrainerController extends Controller
      */
     public function store(Request $request)
     {
+        //validando os campos antes de salvar no bd
+        $validatedData = $request->validate([
+
+            'name' => 'required|max: 10',
+            'avatar' => 'required|image',
+            'slug' => 'required'
+
+        ]);
+
+        $trainer = new Trainer();
+
         //configuracoes da imagem do treinador
         if($request->hasFile('avatar')){
             $file = $request->file('avatar');
@@ -46,7 +57,6 @@ class TrainerController extends Controller
 
         }
              //criar treinador
-        $trainer = new Trainer();
         $trainer->name = $request->input('name');
         $trainer->avatar=$name;
         $trainer->slug=$request->input('slug');
