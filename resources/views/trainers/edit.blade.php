@@ -5,6 +5,7 @@
 
 @section('content')
 
+
             <form class="form-group" action="/trainers/{{ $trainer->slug }}" method="post" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
