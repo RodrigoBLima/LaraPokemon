@@ -113,9 +113,9 @@ class TrainerController extends Controller
 
 
         //redirecionando o usuario atraves de http responses
-        return redirect()->route('trainers.show', [$trainer]);
+        return redirect()->route('trainers.show', [$trainer])->with('status','Treinador atualizado com sucesso !');
 
-            return 'Usuário atualizado com sucesso';
+            //return 'Usuário atualizado com sucesso';
 
 
     }

@@ -4,6 +4,11 @@
 
 
 @section('content')
+@if (session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 
     <img style="heigth:180px; width:200px; backfround-color:EFEFEF; margin:28px;" class="card-img-top rounded-circle mx-auto d-block " src="/images/{{ $trainer->avatar }}" alt="">
    <div class="text-center">
