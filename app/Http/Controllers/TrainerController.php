@@ -36,7 +36,7 @@ class TrainerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    { 
+    {
         //configuracoes da imagem do treinador
         if($request->hasFile('avatar')){
             $file = $request->file('avatar');
@@ -51,7 +51,7 @@ class TrainerController extends Controller
         $trainer->avatar=$name;
         $trainer->save();
         return 'Treinador criado com Sucesso!';
-     
+
     }
 
     /**
@@ -62,7 +62,10 @@ class TrainerController extends Controller
      */
     public function show($id)
     {
-        //
+        $trainer = Trainer::find($id);
+
+        return view('trainers.show', compact('trainer'));
+
     }
 
     /**
