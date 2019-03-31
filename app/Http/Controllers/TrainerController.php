@@ -7,6 +7,7 @@ use LaraDex\Trainer;
 use Iluminate\Support\Facades\Storage;
 use LaraDex\Http\Requests\StoreTrainerRequest;
 
+
 class TrainerController extends Controller
 {
     /**
@@ -14,8 +15,10 @@ class TrainerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
+
         $trainers = Trainer::all();
 
         return view('trainers.index', compact('trainers'));
