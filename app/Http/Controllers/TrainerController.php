@@ -55,7 +55,11 @@ class TrainerController extends Controller
         $trainer->avatar=$name;
         $trainer->slug=$request->input('slug');
         $trainer->save();
-        return 'Treinador criado com Sucesso!';
+
+        //redirecionando o usuario atraves de http responses
+        return redirect()->route('trainers.index');
+
+        //return 'Treinador criado com Sucesso!';
 
     }
 
@@ -107,6 +111,10 @@ class TrainerController extends Controller
 
             $trainer->save();
 
+
+        //redirecionando o usuario atraves de http responses
+        return redirect()->route('trainers.show', [$trainer]);
+
             return 'Usuário atualizado com sucesso';
 
 
@@ -125,6 +133,11 @@ class TrainerController extends Controller
         \File::delete($file_path);
         //eliminando o treinador
         $trainer->delete();
-        return 'Usuário excluido com sucesso !';
+
+
+        //redirecionando o usuario atraves de http responses
+        return redirect()->route('trainers.index');
+
+        //return 'Usuário excluido com sucesso !';
     }
 }
