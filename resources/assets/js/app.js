@@ -15,13 +15,13 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('add-pokemon-btn', require('./components/AddPokemonComponent.vue'));
-Vue.component('create-form-pokemon', require('./components/CreatePokemonComponent.vue'));
+
+Vue.component('list-of-pokemon', require('./components/pokemons/list.vue'));
+Vue.component('modal-button', require('./components/pokemons/modal-button.vue'));
 
 
-Vue.component('pokemons-component', require('./components/PokemonsComponent.vue'));
-Vue.component('spinner', require('./components/Spinner.vue'));
+Vue.component('create-form-pokemon', require('./components/pokemons/add.vue'));
+Vue.component('spinner', require('./components/widgets/spinner.vue'));
 
 
 const app = new Vue({
