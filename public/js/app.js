@@ -49587,7 +49587,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         savePokemon: function savePokemon() {
-            axios.post('http://127.0.0.1:8000/pokemons', {
+            var currentRoute = window.location.pathname;
+
+            axios.post('http://127.0.0.1:8000' + currentRoute + '/pokemons', {
                 name: this.name,
                 picture: this.picture
             }).then(function (res) {

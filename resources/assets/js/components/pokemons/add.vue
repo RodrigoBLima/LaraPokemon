@@ -37,7 +37,10 @@ export default {
     },
     methods: {
       savePokemon: function(){
-          axios.post('http://127.0.0.1:8000/pokemons',{
+          let currentRoute = window.location.pathname
+
+
+          axios.post(`http://127.0.0.1:8000${currentRoute}/pokemons`,{
               name: this.name,
               picture: this.picture
           })

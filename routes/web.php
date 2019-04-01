@@ -21,7 +21,9 @@ Route::get('/', function () {
 Route::get('pruba/{name}', 'PruebaController@pruba');
 
 //rota para pokemons
-Route::resource('pokemons', 'PokemonController');
+//Route::resource('pokemons', 'PokemonController');
+Route::post('trainers/{trainer}/pokemons','PokemonController@store');
+Route::get('trainers/{trainer}/pokemons','PokemonController@index');
 
 
 //rota para os treinadores
