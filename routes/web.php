@@ -20,9 +20,11 @@ Route::get('/', function () {
 //rota teste para treinar com o controller pruebaController
 Route::get('pruba/{name}', 'PruebaController@pruba');
 
+//rota para pokemons
+Route::resource('pokemons', 'PokemonController');
 
 
-//
+//rota para os treinadores
 Route::resource('trainers', 'TrainerController');
 
 
