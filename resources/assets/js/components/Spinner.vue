@@ -12,8 +12,8 @@
   border-radius: 50%;
   position: relative;
   text-indent: -9999em;
-  -webkit-animation: load5 1.1s infinite ease;
-  animation: load5 1.1s infinite ease;
+  -webkit-animation: load5 3.1s infinite ease;
+  animation: load5 3.1s infinite ease;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

@@ -9,14 +9,14 @@
         </button>
       </div>
       <div class="modal-body">
-      	<form>
+      	<form @submit.prevent="savePokemon">
 	        <div class="form-group">
 			    <label>Pokemon</label>
-			    <input type="text" class="form-control" placeholder="Digite o nome do pokemon">
+			    <input type="text" class="form-control" placeholder="Digite o nome do pokemon" v-model="name">
 		  	</div>
 		  	<div class="form-group">
 			    <label>Imagem</label>
-			    <input type="text" class="form-control" placeholder="Cole a URL de uma imagem" >
+			    <input type="text" class="form-control" placeholder="Cole a URL de uma imagem" v-model="picture">
 		  	</div>
 		  	<button type="submit" class="btn btn-primary">Salvar</button>
 	  	</form>
@@ -25,3 +25,31 @@
   </div>
 </div>
 </template>
+<script>
+    import EventBus from '../event-bus';
+export default {
+    data(){
+        return{
+            name:null,
+            picture:null
+
+        }
+    },
+    methods: {
+      savePokemon: function(){
+          axios.post('http://127.0.0.1:8000/pokemons',{
+              name: this.name,
+              picture: this.picture
+          })
+          .then(function(res){
+
+              $('#addPokemon').modal('hide')
+              EventBus.$emit('pokemon.added', res.data.pokemon)
+          })
+          .catch(function(err){
+              console.log(err)
+          })
+      }
+    }
+}
+</script>
