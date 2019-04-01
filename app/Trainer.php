@@ -13,9 +13,16 @@ class Trainer extends Model
     //funcao para tirar o id e colocar o slug melhorando a seguranca
     public function getRouteKeyName()
     {
-
         return 'slug';
-
     }
+
+
+    public function pokemons(){
+        return $this->hasMany('LaraDex\Pokemon');
+    }
+
+
+
+
 
 }
